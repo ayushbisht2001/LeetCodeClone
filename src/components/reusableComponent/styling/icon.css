@@ -1,0 +1,13 @@
+.right-chevron-icon{
+    border-style: solid;
+	border-width: 2.5px 2.5px 0 0;
+	display: inline-block;
+	height: 8px;
+	position: relative;
+	transform: rotate(45deg);
+	vertical-align: top;
+	width: 8px;
+    margin : auto 5px;
+}
+
+ 

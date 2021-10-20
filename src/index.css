@@ -2,12 +2,34 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    sans-serif ;
+    
+  height: auto !important;
+  overflow: visible;
+  /* -webkit-font-smoothing: antialiased; */
+  /* -moz-osx-font-smoothing: grayscale; */
+}
+
+#root{
+  height: auto !important;
+  min-height: 100vh;
+  overflow: visible;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+
+*{
+  box-sizing: border-box !important;
+  
+}
+
+@font-face {
+  font-family: 'TypoRound';
+  src: url('assets/fonts/TypoFound/Typo_Round_Thin_Demo.otf');
+  font-style: normal;
+
 }

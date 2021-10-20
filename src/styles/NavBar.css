@@ -1,0 +1,94 @@
+.navbar-container{
+    display: grid;
+    position: relative;
+    width: 100%;
+    height : 60px;   
+    align-items: flex-end;
+    /* background-color: black; */
+}
+
+.navbar-inner{
+
+    width: 100%;
+    margin : 0px auto;
+    height:  40px;
+    display: grid;
+    position: relative;
+    grid-template-columns: 40%  60%  ;
+    grid-template-rows: 40px;
+    /* background-color: blue; */
+    
+}
+
+.navbar-left{
+    display: inline-flex;
+    position: relative;
+    margin: 0px;
+}
+.navbar-right{
+
+    
+    width: 100% ;
+    height: 100%;
+    
+}
+
+.nav-items-list{
+    width: 100%;
+    height: 30px;
+    margin : 8px 0px;
+    /* background-color: red; */
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+}
+
+.nav-items-list .item {
+
+    min-width: auto;
+    height: 20px;
+    text-decoration: none;
+}
+
+.nav-items-list .item:not(:last-of-type){
+
+    margin-right: 25px;
+}
+
+
+
+.navbar-right .nav-items-list .item .item-text{
+
+    width: 38px;
+    height: auto;
+    padding : 8px 15px 10px;
+    margin: 0px;
+    transition: 0.4s all;
+    border-radius: 30px;   
+    font-weight: 100;
+}
+
+.navbar-right .nav-items-list .item:not(:first-child) .item-text{
+    color: white;
+
+}
+
+.navbar-right .nav-items-list .item:first-child  .item-text {
+    color: orange;
+}
+
+
+.navbar-right .nav-items-list .item .item-text:hover{
+
+    border-radius: 30px;
+    color : black;
+}
+
+.navbar-right .nav-items-list .item:not(:first-child) .item-text:hover{
+    background-color: white;
+}
+
+.navbar-right .nav-items-list .item:first-child .item-text:hover{
+    background-color: orange;
+}
+
