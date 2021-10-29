@@ -1,0 +1,56 @@
+.facebook{
+    
+    height: 52px;
+}
+
+.leap-motion{
+    height: 40px;
+}
+
+.apple{
+    height: 35px;
+}
+
+.uber{
+    height: 15px;
+}
+
+.square-space{
+    height: 38px;
+}
+
+.jet{
+    height: 27px;
+}
+
+.intel{
+    height: 40px;
+}
+
+.amazon{
+    height: 28px;
+}
+
+.bank-of-america{
+    height: 25px;
+}
+
+.pinterest{
+    height: 25px;
+}
+
+.cisco{
+    height: 40px;
+}
+
+
+
+.logo {
+    filter:  grayscale(90%);
+    opacity: 0.2;
+    margin:  15px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}

@@ -15,25 +15,7 @@ import { Hexa } from "../components/cssArts/hexa";
 import { ExploreCard } from "../components/cssArts/exploreCard";
 import { Box } from "../components/styledComponent/global";
 import { Link } from "../components/styledComponent/global";
-import AmazonLogo from "../assets/images/logo/amazon.svg"
-import AppleLogo from "../assets/images/logo/apple.svg"
-import BoaLogo from "../assets/images/logo/bank-of-america.svg"
-import CiscoLogo from "../assets/images/logo/cisco.svg"
-import FacebookLogo from "../assets/images/logo/facebook.svg"
-import IntelLogo from "../assets/images/logo/intel.svg"
-import JetLogo from "../assets/images/logo/jet.svg"
-import PinterestLogo from "../assets/images/logo/pinterest.svg"
-import SsLogo from "../assets/images/logo/squarespace.svg"
-import StripeLogo from "../assets/images/logo/stripe.svg"
-import UberLogo from "../assets/images/logo/uber.svg"
-// import AmazonLogo from "../assets/images/logo/amazon.svg"
-
-
-const logos = [
-  AmazonLogo, AppleLogo, BoaLogo,
-  CiscoLogo, FacebookLogo, IntelLogo, JetLogo,
-  PinterestLogo, SsLogo, StripeLogo, UberLogo
-]
+import Footer from "../components/home/footer";
 
 export default function Home() {
 
@@ -413,101 +395,7 @@ export default function Home() {
       
       </Container>
       
-      <Container 
-        width = "100%"
-        background = "#fff"
-      >
-        <Container 
-          width="100%"
-          maxWidth="1070px"       
-          margin="0px auto"
-          height="auto"
-        >
-              <Row
-          cols = "65%"
-          width = "100%"
-          justify = "center"
-          height = "auto"
-          margin = "100px 0px 0px 0px"
-        >
-          <Col 
-            justify = "center"
-            padding = "10px 40px 0px 40px  "
-
-          >
-          <Content
-              display = "flex"          
-              direction = "column"
-              justify = "center"  
-              align = "center"
-              width = "100%"
-            >
-             
-              <Hexa 
-                color = "red" 
-                iconClass = "fa fa-code"  
-               />                    
-
-              <Box 
-              display = "flex"
-              width = "100%"
-              height = "auto"
-              direction = "column"
-              >
-              <Heading
-                color = "#b71c1c"
-                margin ="10px 0px 20px 0px"
-                size = "22px"
-                weight = "550"
-                justify = "center"
-                
-              >
-             Made with  in IND
-              </Heading>
-              <Text
-                opacity =  "0.5"
-                weight = "500"
-                size = "15px"
-                letterSpacing = "0.03em"
-                margin = "auto"
-                textAlign = "center"
-                >
-               At LeetCode, our mission is to help you improve yourself and land your dream job. 
-               We have a sizable repository of interview resources for many companies. 
-               In the past few years, our users have landed jobs at top companies around the world.
-
-
-
-              </Text>
-              </Box>
-            </Content>
-          </Col>
-        </Row>
-        <Row
-        padding = "30px"
-        align = "center"
-        justify = "center"
-        width = "100%"
-        >
-          <Content 
-            display = "flex"
-            justify = "center"
-            wrap = "wrap"
-            direction = "row"
-          >
-            {logos.map((log, index) => {
-              return(
-                <div className ="logo" >
-                  <img src = {log}  height = "30px" />
-              </div>
-              )
-            })}
-           
-          </Content>
-        </Row>
-        </Container>
-
-      </Container>
+    <Footer />
      
 
       
