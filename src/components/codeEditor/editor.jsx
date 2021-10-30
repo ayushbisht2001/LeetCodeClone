@@ -12,6 +12,7 @@ import "codemirror/addon/edit/closetag";
 import "codemirror/mode/htmlmixed/htmlmixed";
 import "codemirror/mode/css/css";
 import "codemirror/mode/python/python";
+import './editor.css'
 
 import React from 'react';
 
@@ -54,6 +55,7 @@ const Editor = (props) => {
             onChange={(editor, data, value) => {
                 setCode(data)
             }}
+            className = "code-mirror"
       />
       </Container>
     );

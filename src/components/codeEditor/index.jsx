@@ -1,7 +1,8 @@
 import React from "react";
 import { Container } from "../styledComponent/global";
 import Editor from "./editor";
-
+import Header from "./header";
+import Footer from "./footer";
 
 const CodeEditor = (props) => {
 
@@ -15,9 +16,9 @@ const CodeEditor = (props) => {
   return (
     <>
     <Container>
-        <Header />
+        {/* <Header /> */}
         <Editor />
-        <Footer />
+        {/* <Footer /> */}
     </Container>
     </>
   );

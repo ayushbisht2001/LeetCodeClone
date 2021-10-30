@@ -7,11 +7,13 @@ export default function CodeSection() {
     return (
       <Row
         width = "100%"
-        maxWidth = "600px"
-        height = "600px"
+        maxWidth = "800px"
+        height = "400px"
         cols = "70% 30%"
+        rows = "100%"
       >
-        <Col> 
+        <Col
+            > 
             <InTabs  options = { [ {label : "python"}, {label : "java"}, {label : "c++"} ]} />       
             <Editor />  
 
