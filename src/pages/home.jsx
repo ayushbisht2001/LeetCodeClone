@@ -16,6 +16,7 @@ import { ExploreCard } from "../components/cssArts/exploreCard";
 import { Box } from "../components/styledComponent/global";
 import { Link } from "../components/styledComponent/global";
 import Footer from "../components/home/footer";
+import CodeSection from "../components/home/codeSection";
 
 export default function Home() {
 
@@ -401,6 +402,10 @@ export default function Home() {
             </Content>
           </Col>
         </Row>
+        <Row>
+          <CodeSection />
+        </Row>
+
       
       </Container>
       
