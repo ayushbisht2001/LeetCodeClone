@@ -23,6 +23,8 @@ export const Container = styled.div`
   z-index : ${props => props.zIndex || "0px"};
   overflow : ${props => props.overflow || "visible"};
   class : ${props => props.className || ""};
+  border : ${props => props.border || ""};
+
   @media (max-width: 1400px) {   
     ${(props) => props.xl || "none"};
   }
@@ -70,6 +72,12 @@ export const Row = styled.div`
   grid-template-rows : ${props => props.rows || "100%"};
   grid-column-gap : ${props => props.colGap || "0px"};
   grid-row-gap : ${ props => props.rowGap || "0px"};
+  border : ${props => props.border || ""};
+  border-right : ${props => props.borderRight || ""};
+  border-left : ${props => props.borderLeft || ""};
+  border-top : ${props => props.borderTop || ""};
+  border-bottom : ${props => props.borderBottom || ""};
+  ${ (props) => props.childStyle}
 
   @media (max-width: 1400px) {   
     ${(props) => props.xl || "none"};
@@ -113,10 +121,13 @@ export const Col = styled.div`
   text-align : ${props => props.textAlign || "left"};
   position : ${props => props.position || "relative" };
   class : ${props => props.className || ""};
-    top : ${props => props.top || ""};
+  top : ${props => props.top || ""};
   bottom : ${props => props.bottom || ""};
   right : ${props => props.right || ""};
   left : ${props => props.left || ""};
+  border : ${props => props.border || ""};
+  ${ (props) => props.childStyle}
+
   @media (max-width: 1400px) {   
     ${(props) => props.xl || "none"};
   }
@@ -191,6 +202,15 @@ text-align : ${props => props.textAlign || "left"};
 line-height: ${props => props.lineHeight || "1.9em" };
 letter-spacing : ${props => props.letterSpacing || "0.03em"}; 
 class : ${props => props.className || ""};
+border-top : ${props => props.borderTop || ""};
+border-bottom : ${props => props.borderBottom || ""};
+border-right : ${props => props.borderRight || ""};
+border-left : ${props => props.borderLeft || ""};
+border : ${props => props.border || ""};
+min-width : ${(props) => props.minWidth || ""};
+max-width : ${(props)=> props.maxWidth || ""};
+min-height : ${(props) => props.minHeight || ""};
+max-height : ${(props) => props.maxHeight || ""};
 
 `
 
@@ -294,6 +314,7 @@ export const Button = styled.button`
   letter-spacing : ${props => props.letterSpacing || "0.03em"}; 
   transition : ${props => props.transition || "0.4s all"};
   font-size : ${(props) => props.size || "18px"};
+  ${ (props) => props.childStyle}
 
   &:hover{
 
@@ -352,7 +373,12 @@ export const Link = styled.a`
   cursor : ${props => props.cursor || "pointer"};
   float : ${props => props.float || ""};
   text-decoration : none;
-  
+  border-right : ${props => props.borderRight || ""};
+  border-left : ${props => props.borderLeft || ""};
+  border-top : ${props => props.borderTop || ""};
+  border-bottom : ${props => props.borderBottom || ""};
+
+  ${ (props) => props.childStyle}
   &:hover{
 
     box-shadow: 0 15px 25px 10px rgb(0 0 0 / 8%);
@@ -433,3 +459,15 @@ export const Box = styled.div`
     ${(props) => props.xs || "none"};
   }
 `;
+
+
+export const HorizontalBar = styled.div`
+
+width : ${props => props.width || "200px"};
+height : ${props => props.height || "3px"};
+background : ${props => props.background || "#dddddd"};
+border-radius : ${props => props.radius || ""};
+margin : ${props => props.margin || "10px auto"};
+
+
+`
