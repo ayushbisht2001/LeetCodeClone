@@ -24,7 +24,7 @@ export const Container = styled.div`
   overflow : ${props => props.overflow || "visible"};
   class : ${props => props.className || ""};
   border : ${props => props.border || ""};
-
+  opacity : ${props => props.opacity || ""};
   @media (max-width: 1400px) {   
     ${(props) => props.xl || "none"};
   }
@@ -197,7 +197,7 @@ padding : ${(props) => props.padding || "0px"};
 font-size : ${(props) => props.size || "18px"};
 font-family : ${(props) => props.family || "-apple-system, sans-serif"};
 font-weight : ${(props) => props.weight || "semibold"};
-opacity : ${props => props.opacity || "1"};
+opacity : ${(props )=> props.opacity || "1"};
 text-align : ${props => props.textAlign || "left"};
 line-height: ${props => props.lineHeight || "1.9em" };
 letter-spacing : ${props => props.letterSpacing || "0.03em"}; 
@@ -234,6 +234,7 @@ bottom : ${props => props.bottom || ""};
 right : ${props => props.right || ""};
 left : ${props => props.left || ""};
 class : ${props => props.className || ""};
+letter-spacing : ${props => props.letterSpacing || "0.03em"}; 
 
 `
 

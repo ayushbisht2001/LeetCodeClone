@@ -78,12 +78,13 @@ export default function Home() {
               </Heading>
               <Text
                 color="white"
-                opacity="0.5"
+                opacity="0.25"
                 textAlign="center"
                 display="block"
                 margin="40px auto auto auto"
                 weight="50"
                 size="15px"
+                opacity="0.25"
               >
                 LeetCode is the best platform to help you enhance your skills,
                 expand your knowledge and prepare for technical interviews.
@@ -97,6 +98,7 @@ export default function Home() {
                 textAlign="center"
                 align="center"
                 size="15px"
+                opacity="0.25"
               >
                 Create Account
                 <RightChevronIcon />
@@ -126,6 +128,7 @@ export default function Home() {
                     display="block"
                     textAlign="right"
                     weight="540"
+                    opacity="0.25"
                   >
 
                   Start Exploring
@@ -139,7 +142,7 @@ export default function Home() {
               </Row>
               <Text
                 color="black"
-                opacity="0.5"
+                opacity="0.25"
                 textAlign="right"
                 display="block"
                 margin="40px auto auto auto"
@@ -159,9 +162,10 @@ export default function Home() {
                 weight = "450"
                 size = "15px"
                 float = "right"
+                // opacity="0.25"
 
                 >
-                Create Account
+               Get Started
 
               <RightChevronIcon />  
               </Link>              
@@ -182,10 +186,11 @@ export default function Home() {
           rows = "100%"
           className = "question-section"
           margin = "130px auto auto auto"
+
         >
           <Col
             justify = "center"
-            padding = "10px 40px 0px 40px  "
+            padding = "10px 0px 0px 0px  "
              >
             <Content
               display = "flex"          
@@ -194,6 +199,8 @@ export default function Home() {
               align = "flex-start"
               width = "100%"
               borderRight = "2px solid white"
+              padding = "0px 30px 0px 20px"
+          
             >
               <Box 
                 display = "flex"
@@ -221,7 +228,7 @@ export default function Home() {
               >
               <Heading
                 color = "rgb(37, 154, 243)"
-                margin ="10px 0px 20px 0px"
+                margin ="20px 0px 20px 0px"
                 size = "22px"
                 weight = "550"
                 justify = "left"
@@ -230,7 +237,7 @@ export default function Home() {
                 Questions, Community & Contests
               </Heading>
               <Text
-              opacity =  "0.5"
+              opacity="0.25"
               weight = "500"
               size = "15px"
               letterSpacing = "0.03em"
@@ -251,6 +258,7 @@ export default function Home() {
                 color = "#0088cc"
                 weight = "450"
                 size = "15px"
+                // opacity="0.25"
                 >
               View Questions
               <RightChevronIcon />  
@@ -261,7 +269,7 @@ export default function Home() {
 
           <Col 
             justify = "center"
-            padding = "10px 40px 0px 40px  "
+            padding = "10px 0px 0px 0px  "
 
           >
           <Content
@@ -270,6 +278,8 @@ export default function Home() {
               justify = "left"  
               align = "flex-start"
               width = "100%"
+              padding = "0px 20px 0px 50px"
+
             >
               <Box 
                 display = "flex"
@@ -295,17 +305,16 @@ export default function Home() {
               direction = "column"
               >
               <Heading
-                color = "rgb(37, 154, 243)"
-                margin ="10px 0px 20px 0px"
+                color = "#b7892b"
+                margin ="20px 0px 20px 0px"
                 size = "22px"
                 weight = "550"
-                justify = "left"
-                
+                justify = "left"                
               >
                 Companies & Candidates
               </Heading>
               <Text
-              opacity =  "0.5"
+              opacity="0.25"
               weight = "500"
               size = "15px"
               letterSpacing = "0.03em"
@@ -365,17 +374,17 @@ export default function Home() {
               direction = "column"
               >
               <Heading
-                color = "rgb(37, 154, 243)"
-                margin ="10px 0px 20px 0px"
+                color = "#1da09c"
+                margin ="15px 0px 20px 0px"
                 size = "22px"
-                weight = "550"
+                // weight = "550"
                 justify = "center"
                 
               >
               Developer
               </Heading>
               <Text
-                opacity =  "0.5"
+                opacity="0.25"
                 weight = "500"
                 size = "15px"
                 letterSpacing = "0.03em"

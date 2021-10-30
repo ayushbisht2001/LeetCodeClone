@@ -26,6 +26,8 @@ import India from "../../assets/images/logo/india.svg";
 
 import { RightChevronIcon } from "../reusableComponent/icon";
 import "../../styles/home/footer.css";
+import { HeartIcon } from "../reusableComponent/icon";
+import BridgeIcon from "../../assets/images/logo/bridge.png";
 
 const logos = [
   {
@@ -81,7 +83,7 @@ const logos = [
 
 export default function Footer() {
   return (
-    <Container width="100%" background="#fff">
+    <Container width="100%" background="linear-gradient(#ffffff, rgba(255, 255, 255, 0))">
       <Container width="100%" maxWidth="1100px" margin="0px auto" height="auto">
         <Row
           cols="65%"
@@ -90,7 +92,7 @@ export default function Footer() {
           height="auto"
           margin="100px 0px 0px 0px"
         >
-          <Col justify="center" padding="10px 40px 0px 40px  ">
+          <Col justify="center" padding="0px 40px 0px 40px " margin = "-43px auto auto auto">
             <Content
               display="flex"
               direction="column"
@@ -98,24 +100,30 @@ export default function Footer() {
               align="center"
               width="100%"
             >
-              <Hexa color="red" iconClass="fa fa-code" />
+              <Hexa color="red" icon = {
+                <img src = {BridgeIcon} height = "35px" />
+              } />
 
-              <Box display="flex" width="100%" height="auto" direction="column">
+              <Box display="flex" width="100%" height="auto" direction="column" maxWidth = "580px" >
                 <Heading
                   color="#b71c1c"
                   margin="10px 0px 20px 0px"
                   size="22px"
                   weight="550"
                   justify="center"
+                  textAlign = "center"
+                  align = "center"
+
+                  
                 >
-                  Made with in IND
+                  Made with <HeartIcon size = {8} style = {{margin : "auto 5px"}} /> in IN
                 </Heading>
                 <Text
-                  opacity="0.5"
+                  opacity="0.25"
                   weight="500"
-                  size="15px"
+                  size="14.5px"
                   letterSpacing="0.03em"
-                  margin="auto"
+                  margin="10px auto"
                   textAlign="center"
                 >
                   At LeetCode, our mission is to help you improve yourself and
@@ -156,10 +164,10 @@ export default function Footer() {
           justify="center"
           align="center"
           width="100%"
-          margin="20px auto"
+          margin="80px auto"
         >
           <Text
-            opacity="0.5"
+            opacity="0.25"
             weight="500"
             size="15px"
             letterSpacing="0.03em"
@@ -197,7 +205,7 @@ export default function Footer() {
 
         >
           <Col>
-            <Text size="14px" color = "grey" weight = "100" >Copyright © 2021 LeetCode</Text>
+            <Text size="14px" color = "grey"weight = "300" >Copyright © 2021 LeetCode</Text>
           </Col>
           <Col
             display="flex"
@@ -206,10 +214,11 @@ export default function Footer() {
             align = "center"
             childStyle={`
                 & a {
-                  font-size : 14px;
+                  font-size : 13px;
                   color : #373737;
                   padding : 0px 5px;
-                  font-weight : 100;                            
+                  font-weight : 100;  
+                  text-decoration : none;                          
                 }
 
                 & img {
@@ -220,19 +229,19 @@ export default function Footer() {
                 }
               `}
           >
-            <Link>Help Center</Link>
+            <a href = "" >Help Center</a>
             &nbsp;|&nbsp;
-            <Link>Jobs</Link>
+            <a href = "" >Jobs</a>
             &nbsp;|&nbsp;
-            <Link>Bug Bounty </Link>
+            <a href = "" >Bug Bounty </a>
             &nbsp;|&nbsp;
-            <Link>Students</Link>
+            <a href = "" >Students</a>
             &nbsp;|&nbsp;
-            <Link>Terms</Link>
+            <a href = "" >Terms</a>
             &nbsp;|&nbsp;
-            <Link>Privacy Policy</Link>
+            <a href = "" >Privacy Policy</a>
             <img src= {India}   />
-            <Link>India</Link>
+            <a href = "" >India</a>
           </Col>
         </Row>
       </Container>
