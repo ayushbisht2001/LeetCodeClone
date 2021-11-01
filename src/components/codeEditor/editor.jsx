@@ -8,7 +8,11 @@ import "codemirror/theme/eclipse.css";
 import "codemirror/theme/blackboard.css";
 import "codemirror/theme/material.css";
 import "codemirror/addon/edit/closebrackets";
-import "codemirror/addon/edit/closetag";
+import "codemirror/addon/edit/closebrackets";
+import "codemirror/addon/fold/foldcode";
+import "codemirror/addon/fold/foldgutter";
+import "codemirror/addon/fold/foldgutter.css";
+
 import "codemirror/mode/htmlmixed/htmlmixed";
 import "codemirror/mode/css/css";
 import "codemirror/mode/python/python";
@@ -21,13 +25,13 @@ const Editor = (props) => {
     const{
         code,
         setCode,
-        theme = "material",
-        mode = "xml",
+        theme = "idea",
+        mode = "python",
         addOptions = {},
         containerStyle = {}
     } = props;
 
-    let codeMirrorOptions = {
+    const codeMirrorOptions = {
         smartIndent: true,
         indentWithTabs: true,
         autoCloseTags: true,
@@ -35,14 +39,17 @@ const Editor = (props) => {
         lineNumbers: true,
         scrollbarStyle: null,
         lineWrapping: true,
+        tabSize : 2,
+        extraKeys: {"Ctrl-Q": function(cm){ cm.foldCode(cm.getCursor()); }},
+        foldGutter: true,
+        gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"],
         ...addOptions
       };
 
     return (
         <Container 
             width = "100%"
-            height = "100%"
-            
+                        
             {...containerStyle}
         >
         <CodeMirror
@@ -50,14 +57,16 @@ const Editor = (props) => {
             options={{
             mode: mode,
             theme: theme,
-            ...codeMirrorOptions
+            ...codeMirrorOptions,
+
+
             }}
             onChange={(editor, data, value) => {
-                setCode(data)
+                // setCode(data)
             }}
             className = "code-mirror"
       />
-      </Container>
+    </Container>
     );
 }
 

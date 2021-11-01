@@ -5,12 +5,13 @@ import Tab from '@mui/material/Tab';
 
 
 const CustomTabs = styled(Tabs)({
-  borderBottom: '1px solid #e8e8e8',
-  minHeight : "40px",
-  height : "40px",
+  // borderBottom: '1px solid #e8e8e8',
+  minHeight : "36px",
+  height : "36px",
+  width : "100%",
   '& .MuiTabs-scroller' : {
-    minHeight : "40px",
-    height : "40px"
+    minHeight : "36px",
+    height : "36px",
   }  ,
   
   '& .MuiTabs-indicator': {
@@ -26,7 +27,7 @@ const CustomTab = styled((props) => <Tab disableRipple {...props} />)(({ theme }
   textTransform: 'none',
   minWidth: 0,
   padding : "0px 15px",
- height : "100%",
+  height : "36px",
 [theme.breakpoints.up('sm')]: {
     minWidth: 0,
   },
@@ -46,24 +47,32 @@ const CustomTab = styled((props) => <Tab disableRipple {...props} />)(({ theme }
     '"Segoe UI Symbol"',
   ].join(','),
   '&:hover': {
-    color: '#40a9ff',
     opacity: 1,
   },
   '&.MuiButtonBase-root ' : {
-    minHeight : "40px",
+    maxHeight : "100%",
     alignItem : "center",
-    display : "grid"
+    display : "grid",
+    minHeight : "100%",
+    padding : "0px 10px"
 
   }
-,  '& .Mui-selected': {
-    color: '#1890ff',
-    fontWeight: theme.typography.fontWeightMedium,
-  },
-  '& .MuiTabs-flexContainer ' : {
-    minHeight : "40px",
+,  
+'&.Mui-selected': {
+    background : "white",
+    color: 'rgba(0, 0, 0, 0.85)',
+    borderBottomColor : "white",
 
   },
-  '& .Mui-focusVisible': {
+  '&.MuiTabs-flexContainer ' : {
+
+    height : "40px",
+    minHeight : "100%",
+    width : "100%"
+
+
+  },
+  '&.Mui-focusVisible': {
     backgroundColor: '#d1eaff',
   },
  
@@ -76,7 +85,10 @@ export default function InTabs(props) {
 
 const {
     options = [],
-    setOptions,    
+    setOptions,
+    rightComponents = null,
+    customTabsStyle,
+    customTabStyle    
 }  = props;
 
 const [value, setValue] = React.useState(0);
@@ -86,12 +98,15 @@ const [value, setValue] = React.useState(0);
   };
 
   return (
-    <CustomTabs value={value} onChange={handleChange} aria-label="ant example">
+    <CustomTabs value={value} onChange={handleChange} aria-label="ant example" sx = { { ...customTabsStyle}  } >
         { options.length > 0 && options.map(( data, index  ) => {
             return (
-                <CustomTab key = {`customtabs${index}`} label={data.label} />
+                <CustomTab key = {`customtabs${index}`} label={data.label}  sx = { { ...customTabStyle}}  />
             )
         } ) }
+       
+        { rightComponents }
+        
     </CustomTabs>
   );
 }

@@ -2,9 +2,36 @@
     height: 100%;
     width: 100%;
 
-}
+} 
 
 .CodeMirror{
     height: 100%;
     width: 100%;
+    border-radius:  0px 0px 5px 5px ;
+
 }
+
+.CodeMirror-scroll{
+    margin-bottom: -30px !important  ;
+    margin-right: -30px   !important ;
+    padding-bottom: 30px !important;
+    /* overflow-x: hidden !important;    */
+}
+
+.CodeMirror-foldmarker {    
+    font-family: arial;
+  }
+ .CodeMirror-foldgutter {
+    width: .7em;
+  }
+  .CodeMirror-foldgutter-open,
+  .CodeMirror-foldgutter-folded {
+    color: #555;
+    cursor: pointer;
+  }
+  .CodeMirror-foldgutter-open:after {
+    content: "\25BE";
+  }
+  .CodeMirror-foldgutter-folded:after {
+    content: "\25B8";
+  }

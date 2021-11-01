@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled , {css} from "styled-components";
 
 
 
@@ -17,6 +17,7 @@ export const Container = styled.div`
   max-height : ${(props) => props.maxHeight || ""};
   position : ${props => props.position || "relative" };
   top : ${props => props.top || ""};
+  border-radius : ${props => props.radius || "0px"};
   bottom : ${props => props.bottom || "0px"};
   right : ${props => props.right || "0px"};
   left : ${props => props.left || "0px"};
@@ -25,6 +26,7 @@ export const Container = styled.div`
   class : ${props => props.className || ""};
   border : ${props => props.border || ""};
   opacity : ${props => props.opacity || ""};
+
   @media (max-width: 1400px) {   
     ${(props) => props.xl || "none"};
   }
@@ -77,6 +79,8 @@ export const Row = styled.div`
   border-left : ${props => props.borderLeft || ""};
   border-top : ${props => props.borderTop || ""};
   border-bottom : ${props => props.borderBottom || ""};
+  border-radius : ${props => props.radius || "0px"};
+
   ${ (props) => props.childStyle}
 
   @media (max-width: 1400px) {   
@@ -126,6 +130,8 @@ export const Col = styled.div`
   right : ${props => props.right || ""};
   left : ${props => props.left || ""};
   border : ${props => props.border || ""};
+  border-radius : ${props => props.radius || "0px"};
+  box-shadow : ${props => props.shadow || ""};
   ${ (props) => props.childStyle}
 
   @media (max-width: 1400px) {   
@@ -147,6 +153,8 @@ export const Col = styled.div`
   @media (max-width: 300px) {   
     ${(props) => props.xs || "none"};
   }
+
+  ${props => css`${props.customStyle}`}
 `;
 
 
@@ -168,6 +176,7 @@ export const Section = styled.section`
   left : ${props => props.left || ""};
   position : ${props => props.position || "" };
   class : ${props => props.className || ""};
+  ${ (props) => props.childStyle}
 
 `;
 
@@ -303,25 +312,24 @@ export const Button = styled.button`
   flex-wrap : ${(props) => props.wrap || ""};
   margin : ${(props) => props.margin || "0px"};
   padding : ${(props) => props.padding || "10px 5px"};   
-  min-width : ${(props) => props.minWidth || ""};
+  min-width : ${(props) => props.minWidth || "60px"};
   max-width : ${(props)=> props.maxWidth || ""};
-  min-height : ${(props) => props.minHeight || ""};
+  min-height : ${(props) => props.minHeight || "30px"};
   max-height : ${(props) => props.maxHeight || ""};
   position : ${props => props.position || "relative" };
   text-align : ${props => props.textAlign || "left"};
   border-radius : ${props => props.radius || "20px"};
-  border : ${props => props.border || "none"};
+  border : ${props => props.border || "1px solid " + props.background};
   line-height: ${props => props.lineHeight || "1.9em" };
   letter-spacing : ${props => props.letterSpacing || "0.03em"}; 
   transition : ${props => props.transition || "0.4s all"};
   font-size : ${(props) => props.size || "18px"};
+  touch-action: manipulation;
+  cursor : pointer;
   ${ (props) => props.childStyle}
 
   &:hover{
 
-    box-shadow: 0 15px 25px 10px rgb(0 0 0 / 8%);
-    transition: box-shadow .4s;
-    transition: box-shadow .4s,-webkit-box-shadow .4s;
     ${props => props.onHoverStyle || ""}
   }
 
@@ -419,8 +427,10 @@ export const Box = styled.div`
   display: ${(props) => props.display || "block"};
   align-items: ${(props) => props.align || ""};
   justify-content: ${(props) => props.justify || ""};
+  border : ${props => props.border || "none"};
   flex-direction : ${(props) => props.direction || ""};
   flex-wrap : ${(props) => props.wrap || ""};
+  border-radius : ${props => props.radius || "3px"};
   margin : ${(props) => props.margin || "0px"};
   padding : ${(props) => props.padding || "0px"};   
   min-width : ${(props) => props.minWidth || ""};
@@ -440,6 +450,8 @@ export const Box = styled.div`
   grid-column-gap : ${props => props.colGap || "0px"};
   grid-row-gap : ${ props => props.rowGap || "0px"};
   grid-auto-flow : ${props => props.autoFlow || ""};
+  ${ (props) => props.childStyle}
+
   @media (max-width: 1400px) {   
     ${(props) => props.xl || "none"};
   }
