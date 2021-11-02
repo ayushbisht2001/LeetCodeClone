@@ -484,3 +484,42 @@ margin : ${props => props.margin || "10px auto"};
 
 
 `
+
+export const List = styled.ul`
+width: ${(props) => props.width || "auto"};
+height: ${(props) => props.height || "auto"};
+background: ${(props) => props.background || "none"};
+color: ${(props) => props.color || "black"};
+display: ${(props) => props.display || "block"};
+align-items: ${(props) => props.align || ""};
+justify-content: ${(props) => props.justify || ""};
+list-style : ${props => props.Lstyle || "none"}; 
+border : ${props => props.border || "none"};
+flex-direction : ${(props) => props.direction || ""};
+flex-wrap : ${(props) => props.wrap || ""};
+border-radius : ${props => props.radius || "3px"};
+margin : ${(props) => props.margin || "0px"};
+padding : ${(props) => props.padding || "0px"};   
+min-width : ${(props) => props.minWidth || ""};
+max-width : ${(props)=> props.maxWidth || ""};
+min-height : ${(props) => props.minHeight || ""};
+max-height : ${(props) => props.maxHeight || ""};
+position : ${props => props.position || "relative" };
+text-align : ${props => props.textAlign || "left"};
+position : ${props => props.position || "relative" };
+top : ${props => props.top || ""};
+bottom : ${props => props.bottom || ""};
+right : ${props => props.right || ""};
+left : ${props => props.left || ""};
+float : ${props => props.float || ""};
+grid-template-columns : ${props => props.cols || "100%"};
+grid-template-rows : ${props => props.rows || "100%"};
+grid-column-gap : ${props => props.colGap || "0px"};
+grid-row-gap : ${ props => props.rowGap || "0px"};
+grid-auto-flow : ${props => props.autoFlow || ""};
+`
+
+export const ListItem = styled.li`
+
+
+`

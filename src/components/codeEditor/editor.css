@@ -11,6 +11,10 @@
 
 }
 
+.CodeMirror-linenumber {
+  font-size: 12px;
+}
+
 .CodeMirror-scroll{
     margin-bottom: -30px !important  ;
     margin-right: -30px   !important ;
@@ -18,11 +22,12 @@
     /* overflow-x: hidden !important;    */
 }
 
+
 .CodeMirror-foldmarker {    
     font-family: arial;
   }
  .CodeMirror-foldgutter {
-    width: .7em;
+    width: .6em;
   }
   .CodeMirror-foldgutter-open,
   .CodeMirror-foldgutter-folded {

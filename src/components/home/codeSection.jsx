@@ -1,19 +1,21 @@
 import React from 'react'
 import Editor from '../codeEditor/editor'
 import InTabs from '../customMuiGems/Tabs'
-import { Container, Row, Col, Box, Content } from '../styledComponent/global'
+import { Container, Row, Col, Box, Content, List, ListItem } from '../styledComponent/global'
 import { Button } from '../styledComponent/Button'
 import FileCopySharpIcon from '@mui/icons-material/FileCopySharp';
 import PlayCircleIcon from '@mui/icons-material/PlayCircle';
 import PlayGround from "../../assets/images/LeetCode_Playground.png"
+
 export default function CodeSection() {
     return (
       <Row
         width = "100%"
-        maxWidth = "800px"
         height = "400px"
-        cols = "70% 30%"
+        cols = "80% 20%"
         rows = "100%"
+        margin = "30px 10px"
+
       >
         <Col
          border = "1px  solid #dddddd"
@@ -99,13 +101,21 @@ export default function CodeSection() {
               }
             
             />
-            </Box>       
-            <Editor containerStyle = {{ height : `calc( 100% - 43px )` }} />  
-
+            </Box>    
+            
+            <Editor containerStyle = {{ height : "calc(100% - 43px)"}}  />  
         </Col>
 
-        <Col>   
+        <Col
+          background = "red"
+        > <List>
+            <ListItem>
 
+            </ListItem>
+
+        </List>
+
+              
         </Col>
       </Row>
     )
