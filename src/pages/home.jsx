@@ -100,6 +100,7 @@ export default function Home() {
                 align="center"
                 size="15px"
                 opacity="0.25"
+                shadow1
               >
                 Create Account
                 <RightChevronIcon />

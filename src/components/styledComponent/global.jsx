@@ -4,6 +4,9 @@ import styled , {css} from "styled-components";
 
 
 
+
+
+
 export const Container = styled.div`
   width: ${(props) => props.width || "100%"};
   height: ${(props) => props.height || "100%"};
@@ -328,9 +331,14 @@ export const Button = styled.button`
   cursor : pointer;
   ${ (props) => props.childStyle}
 
-  &:hover{
-
-    ${props => props.onHoverStyle || ""}
+ 
+  ${props => props.shadow1 && `
+    &:hover
+    {
+    box-shadow: 0 15px 25px 10px rgb(0 0 0 / 8%);
+    transition: box-shadow .4s;
+    transition: box-shadow .4s,-webkit-box-shadow .4s;
+    }`
   }
 
   @media (max-width: 1400px) {   
@@ -388,13 +396,25 @@ export const Link = styled.a`
   border-bottom : ${props => props.borderBottom || ""};
 
   ${ (props) => props.childStyle}
-  &:hover{
 
+  ${props => props.shadow1 && `
+    &:hover
+    {
     box-shadow: 0 15px 25px 10px rgb(0 0 0 / 8%);
     transition: box-shadow .4s;
     transition: box-shadow .4s,-webkit-box-shadow .4s;
-    ${props => props.onHoverStyle || ""}
+    }`
   }
+
+  ${props => props.primary && `
+    display : inline-flex;
+    width : auto;
+    height : auto;
+    align : center;
+    color : #0088cc;
+    font-weight : ${props => props.weight || "450"};
+    font-size : ${(props) => props.size || "15px"};
+  `}
 
   @media (max-width: 1400px) {   
     ${(props) => props.xl || "none"};
@@ -415,6 +435,8 @@ export const Link = styled.a`
   @media (max-width: 300px) {   
     ${(props) => props.xs || "none"};
   }
+
+  ${props => props.customStyle}
 `;
 
 
@@ -450,6 +472,8 @@ export const Box = styled.div`
   grid-column-gap : ${props => props.colGap || "0px"};
   grid-row-gap : ${ props => props.rowGap || "0px"};
   grid-auto-flow : ${props => props.autoFlow || ""};
+  box-shadow : ${props => props.shadow || ""};
+
   ${ (props) => props.childStyle}
 
   @media (max-width: 1400px) {   
@@ -486,40 +510,63 @@ margin : ${props => props.margin || "10px auto"};
 `
 
 export const List = styled.ul`
-width: ${(props) => props.width || "auto"};
+width: ${(props) => props.width || "100%"};
 height: ${(props) => props.height || "auto"};
 background: ${(props) => props.background || "none"};
 color: ${(props) => props.color || "black"};
-display: ${(props) => props.display || "block"};
+display: ${(props) => props.display || "flex"};
 align-items: ${(props) => props.align || ""};
 justify-content: ${(props) => props.justify || ""};
 list-style : ${props => props.Lstyle || "none"}; 
 border : ${props => props.border || "none"};
-flex-direction : ${(props) => props.direction || ""};
-flex-wrap : ${(props) => props.wrap || ""};
-border-radius : ${props => props.radius || "3px"};
+flex-direction : ${(props) => props.direction || "column"};
+flex-wrap : ${(props) => props.wrap || "nowrap"};
+border-radius : ${props => props.radius || "0px"};
 margin : ${(props) => props.margin || "0px"};
-padding : ${(props) => props.padding || "0px"};   
+padding : ${(props) => props.padding || "10px"};   
 min-width : ${(props) => props.minWidth || ""};
 max-width : ${(props)=> props.maxWidth || ""};
 min-height : ${(props) => props.minHeight || ""};
 max-height : ${(props) => props.maxHeight || ""};
 position : ${props => props.position || "relative" };
 text-align : ${props => props.textAlign || "left"};
-position : ${props => props.position || "relative" };
 top : ${props => props.top || ""};
 bottom : ${props => props.bottom || ""};
 right : ${props => props.right || ""};
 left : ${props => props.left || ""};
 float : ${props => props.float || ""};
-grid-template-columns : ${props => props.cols || "100%"};
-grid-template-rows : ${props => props.rows || "100%"};
+grid-template-columns : ${props => props.cols || ""};
+grid-template-rows : ${props => props.rows || ""};
 grid-column-gap : ${props => props.colGap || "0px"};
 grid-row-gap : ${ props => props.rowGap || "0px"};
 grid-auto-flow : ${props => props.autoFlow || ""};
+
+${ (props) => props.childStyle}
+
+
+
 `
 
 export const ListItem = styled.li`
+  width : ${props => props.width || "80%"};
+  height : ${props => props.height || "40px"};
+  display : ${props => props.display || "inline-flex"};
+  border : ${props => props.border || "none"};
+  flex-direction : ${(props) => props.direction || "column"};
+  flex-wrap : ${(props) => props.wrap || "nowrap"};
+  border-radius : ${props => props.radius || "7px"};
+  margin : ${(props) => props.margin || "5px"};
+  padding : ${(props) => props.padding || "10px"};   
+  min-width : ${(props) => props.minWidth || ""};
+  max-width : ${(props)=> props.maxWidth || ""};
+  min-height : ${(props) => props.minHeight || ""};
+  max-height : ${(props) => props.maxHeight || ""};
+  position : ${props => props.position || "relative" };
+  text-align : ${props => props.textAlign || "left"};
+  top : ${props => props.top || ""};
+  bottom : ${props => props.bottom || ""};
+  right : ${props => props.right || ""};
+  left : ${props => props.left || ""};
 
 
 `
