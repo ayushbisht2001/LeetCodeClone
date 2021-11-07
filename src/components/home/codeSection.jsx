@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useState, useRef} from "react";
 import Editor from "../codeEditor/editor";
 import InTabs from "../customMuiGems/Tabs";
 import {
@@ -15,10 +15,44 @@ import { Button } from "../styledComponent/Button";
 import FileCopySharpIcon from "@mui/icons-material/FileCopySharp";
 import PlayCircleIcon from "@mui/icons-material/PlayCircle";
 import PlayGround from "../../assets/images/LeetCode_Playground.png";
+import { useSelector } from "react-redux";
 import { RightChevronIcon } from "../reusableComponent/icon";
 
 
-export default function CodeSection() {
+
+export default function CodeSection(props) {
+
+  const [code, setCode] = useState( "" )
+  
+  const [ problem, setProblem] = useState([])
+  
+  const problem_list = useSelector(state => state.codes.codes_home)
+
+  let back_ref = useRef();
+  
+  useEffect(()=> {
+
+    if(problem_list.length > 0)
+    {
+      
+      setProblem( problem_list[0] )
+      
+      console.log(problem)
+    }
+  }, [problem_list] )
+
+
+  const handleProblems = (ele) => {
+
+    console.log("element", ele, back_ref);
+
+    // back_ref.current.style({
+    //   top : `calc(   ${ele} )`
+    // })
+
+  }
+
+
   return (
     <Row
       width="100%"
@@ -42,7 +76,15 @@ export default function CodeSection() {
           height="43px"
         >
           <InTabs
-            options={[{ label: "C++" }, { label: "Java" }, { label: "Python" }]}
+            options= { problem.solution }
+            setOptions = {setCode}
+            optionsKeyMapper = {
+              {
+                "label" : "lang",
+                "data" : "code"
+              }
+            }
+
             rightComponents={
               <Box
                 display="flex"
@@ -110,7 +152,7 @@ export default function CodeSection() {
           />
         </Box>
 
-        <Editor containerStyle={{ height: "calc(100% - 43px)" }} />
+        <Editor containerStyle={{ height: "calc(100% - 43px)" }}  code = {code} setCode = {setCode} />
       </Col>
 
       <Col 
@@ -138,6 +180,13 @@ export default function CodeSection() {
             justify-content : flex-start;
             flex-direction : row;
             margin-left : 0px;
+
+            &:hover{
+              color : #3fbbff;
+            }
+            &:active{
+              color : #1da09c;
+            }
           }
 
           & li:last-child{
@@ -159,41 +208,32 @@ export default function CodeSection() {
             radius = "5px"
             left = "0px"
             top = "0px"
+            ref = {back_ref}
           > </Box>
-          <ListItem
 
-          
-          >
-            
-              <span style = {{
-                fontSize : "13px",
-                fontFamily : "calibri"
-                
-              }} >{"</>"} </span> &nbsp;&nbsp;Linked List
+          { problem_list.map( (option, index) => {
 
-            {/* <i class="fa fa-code" aria-hidden="true"></i> */}
-          </ListItem>
-          <ListItem>
-               <span style = {{
-                fontSize : "13px",
-                fontFamily : "calibri"
-                
-              }} >{"</>"} </span>
-           &nbsp;&nbsp;Binary Tree
-          </ListItem>
-          <ListItem>
-           
-              
-              <span style = {{
-                fontSize : "13px",
-                fontFamily : "calibri"
-                
-              }} >{"</>"} </span>&nbsp;&nbsp;Fibonacci
-          </ListItem>
-          <ListItem>
-           
-             Create Playground {">"}
-          </ListItem>
+            return (
+
+              <ListItem
+                onClick = { handleProblems}  
+
+              >                
+                  <span style = {{
+                    fontSize : "13px",
+                    fontFamily : "calibri"
+                    
+                  }} >{"</>"} </span> &nbsp;&nbsp;{option.label}
+    
+              </ListItem>
+            )
+
+
+              } ) 
+            }
+            <ListItem>           
+              Create Playground {">"}
+            </ListItem>         
         </List>
       </Col>
     </Row>

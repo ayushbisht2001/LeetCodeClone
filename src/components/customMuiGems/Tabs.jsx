@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, {useEffect} from 'react';
 import { styled } from '@mui/material/styles';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
@@ -85,6 +85,7 @@ export default function InTabs(props) {
 
 const {
     options = [],
+    optionsKeyMapper = false,
     setOptions,
     rightComponents = null,
     customTabsStyle,
@@ -93,15 +94,28 @@ const {
 
 const [value, setValue] = React.useState(0);
 
+useEffect(() => {
+
+  console.log("options", options)
+
+})
+
   const handleChange = (event, newValue) => {
     setValue(newValue);
+    
+    optionsKeyMapper ? setOptions( options[newValue][optionsKeyMapper["data"]]  ) : setOptions(options[newValue].data)
+    
   };
 
   return (
     <CustomTabs value={value} onChange={handleChange} aria-label="ant example" sx = { { ...customTabsStyle}  } >
-        { options.length > 0 && options.map(( data, index  ) => {
+        { ( options && options.length > 0 )&& options.map(( data, index  ) => {
             return (
-                <CustomTab key = {`customtabs${index}`} label={data.label}  sx = { { ...customTabStyle}}  />
+                <CustomTab 
+                  key = {`customtabs${index}`} 
+                  label = {optionsKeyMapper ? data[optionsKeyMapper["label"] ] : data.label  }  
+                  sx = { { ...customTabStyle}}                 
+                />
             )
         } ) }
        

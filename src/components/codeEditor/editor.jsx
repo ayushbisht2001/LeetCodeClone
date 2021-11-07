@@ -40,7 +40,7 @@ const Editor = (props) => {
 
     const{
         code,
-        setCode,
+        setCode = false,
         theme = "default",
         mode = "python",
         addOptions = {},
@@ -78,7 +78,7 @@ const Editor = (props) => {
 
             }}
             onChange={(editor, data, value) => {
-                // setCode(data)
+               setCode && setCode(value)
             }}
             className = "code-mirror"
       />
