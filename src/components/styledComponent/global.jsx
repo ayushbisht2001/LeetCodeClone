@@ -473,6 +473,7 @@ export const Box = styled.div`
   grid-row-gap : ${ props => props.rowGap || "0px"};
   grid-auto-flow : ${props => props.autoFlow || ""};
   box-shadow : ${props => props.shadow || ""};
+  transition : ${props=> props.transition || "0.5s all"};
 
   ${ (props) => props.childStyle}
 

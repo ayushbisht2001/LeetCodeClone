@@ -95,10 +95,13 @@ const {
 const [value, setValue] = React.useState(0);
 
 useEffect(() => {
-
   console.log("options", options)
-
-})
+  if(options.length > 0)
+  {
+    optionsKeyMapper  ? setOptions( options[0][optionsKeyMapper["data"]]  )   : setOptions(options[0].data)
+  }
+  
+},[options])
 
   const handleChange = (event, newValue) => {
     setValue(newValue);

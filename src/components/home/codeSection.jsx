@@ -29,7 +29,7 @@ export default function CodeSection(props) {
   const problem_list = useSelector(state => state.codes.codes_home)
 
   let back_ref = useRef();
-  
+
   useEffect(()=> {
 
     if(problem_list.length > 0)
@@ -42,13 +42,17 @@ export default function CodeSection(props) {
   }, [problem_list] )
 
 
-  const handleProblems = (ele) => {
+  const handleProblems = (ele, index) => {
 
-    console.log("element", ele, back_ref);
-
-    // back_ref.current.style({
-    //   top : `calc(   ${ele} )`
-    // })
+  try{
+  let top = back_ref.current.style["top"]
+  top = (top.slice(0, top.length-2))
+  back_ref.current.style["top"] = `${Math.abs(top%40 - index)*40}px`;
+    }
+  catch(err){ 
+    console.log("invalid value", err)
+  } 
+  setProblem(problem_list[index])
 
   }
 
@@ -180,6 +184,7 @@ export default function CodeSection(props) {
             justify-content : flex-start;
             flex-direction : row;
             margin-left : 0px;
+            cursor : pointer;
 
             &:hover{
               color : #3fbbff;
@@ -216,7 +221,7 @@ export default function CodeSection(props) {
             return (
 
               <ListItem
-                onClick = { handleProblems}  
+                onClick = { (ele) =>  handleProblems(ele, index)}  
 
               >                
                   <span style = {{
