@@ -17,16 +17,17 @@ import PlayCircleIcon from "@mui/icons-material/PlayCircle";
 import PlayGround from "../../assets/images/LeetCode_Playground.png";
 import { useSelector } from "react-redux";
 import { RightChevronIcon } from "../reusableComponent/icon";
-
-
+import Console2 from "../codeEditor/console2.jsx";
+import { CustomChevronIcon } from "../reusableComponent/icon";
 
 export default function CodeSection(props) {
 
   const [code, setCode] = useState( "" )
-  
+  const[codeDetails, setCodeDetails] = useState({}) 
   const [ problem, setProblem] = useState([])
-  
+  const[ showConsole, setConsole] = useState(false)
   const problem_list = useSelector(state => state.codes.codes_home)
+  const [runStatus, setRunStatus] = useState("")
 
   let back_ref = useRef();
 
@@ -41,6 +42,12 @@ export default function CodeSection(props) {
     }
   }, [problem_list] )
 
+  const run = () => {
+
+    !showConsole && setConsole(true)
+    setRunStatus("process")
+
+  }
 
   const handleProblems = (ele, index) => {
 
@@ -133,7 +140,12 @@ export default function CodeSection(props) {
                   />
                   Copy
                 </Button>
-                <Button success>
+                <Button 
+                  success
+                   onClick = { () => {
+                    run()
+                  } }
+                >
                   <PlayCircleIcon
                     style={{ fontSize: "15px", marginRight: "3px" }}
                   />
@@ -147,6 +159,7 @@ export default function CodeSection(props) {
                           background: #464646;
                         }
                       `}
+               
                 >
                   <img src={PlayGround} width="16px" height="16px" />
                   &nbsp; Playground{" "}
@@ -155,8 +168,53 @@ export default function CodeSection(props) {
             }
           />
         </Box>
+        <Container
+          width = "100%"
+          height = "calc(100% - 43px)"
+          position = "relative"
+        >
+          <Box 
+            height = "calc(100% + 2px)"
+            width = { showConsole ? "40%" : "0px" }
+            position = "absolute"
+            background = "#f5f5f5"            
+            right = "-1px"
+            zIndex  = "10"
+          >
+             <CustomChevronIcon  
+              sx = {{ 
+                position : "absolute", 
+                left : "0px",
+                top : "15px",
+                cursor : "pointer",
+                marginLeft : "-26px"
 
-        <Editor containerStyle={{ height: "calc(100% - 43px)" }}  code = {code} setCode = {setCode} />
+              }} 
+              
+              type = {showConsole}
+              onClick = {() => {
+                setConsole(!showConsole)
+              }}
+              />  
+              <Box
+                background = "#f5f5f5"
+                border = "1px solid #dddddd"
+                width = "100%"
+                height = "100%"
+                display = {!showConsole && "none"}
+
+              >
+                <Console2 data = {code} runStatus = {runStatus} setRunStatus = {setRunStatus}  />
+
+              </Box>
+          </Box>
+                   
+
+            <Editor   code = {code} setCode = {setCode} />
+            
+
+        </Container>
+        
       </Col>
 
       <Col 

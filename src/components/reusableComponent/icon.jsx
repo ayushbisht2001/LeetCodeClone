@@ -1,11 +1,39 @@
 import './styling/icon.css';
-
+import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
+import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 
 export const RightChevronIcon = (props) =>{
     return( 
         <i className = "right-chevron-icon"  ></i>
     )
 }
+
+export const CustomChevronIcon = (props) => {
+
+    const{
+    type = 0,
+    sx ={},
+    onClick
+    } = props;
+
+    return(
+        <div 
+        className = "custom-chevron-box" 
+        style = {{...sx}}
+        onClick = {onClick}
+        >{type ?
+            <i class="fa fa-chevron-circle-right fa-sm" style = {{ fontSize : "13px"}} aria-hidden="true"></i>
+            : 
+            <i class="fa fa-chevron-circle-left fa-sm"  style = {{ fontSize : "13px"}} aria-hidden="true"></i>
+
+        }
+
+        
+        </div>
+
+    )
+
+} 
 
 export const HeartIcon = (props) => {
 

@@ -24,7 +24,7 @@ export const Container = styled.div`
   bottom : ${props => props.bottom || "0px"};
   right : ${props => props.right || "0px"};
   left : ${props => props.left || "0px"};
-  z-index : ${props => props.zIndex || "0px"};
+  z-index : ${props => props.zIndex || "0"};
   overflow : ${props => props.overflow || "visible"};
   class : ${props => props.className || ""};
   border : ${props => props.border || ""};
@@ -83,6 +83,7 @@ export const Row = styled.div`
   border-top : ${props => props.borderTop || ""};
   border-bottom : ${props => props.borderBottom || ""};
   border-radius : ${props => props.radius || "0px"};
+  transition : ${props => props.transition || "0.4s all"};
 
   ${ (props) => props.childStyle}
 
@@ -135,6 +136,9 @@ export const Col = styled.div`
   border : ${props => props.border || ""};
   border-radius : ${props => props.radius || "0px"};
   box-shadow : ${props => props.shadow || ""};
+  transition : ${props => props.transition || "0.4s all"};
+  overflow : ${props => props.overflow || "visible"};
+
   ${ (props) => props.childStyle}
 
   @media (max-width: 1400px) {   
@@ -474,6 +478,7 @@ export const Box = styled.div`
   grid-auto-flow : ${props => props.autoFlow || ""};
   box-shadow : ${props => props.shadow || ""};
   transition : ${props=> props.transition || "0.5s all"};
+  z-index : ${props => props.zIndex || "0"};
 
   ${ (props) => props.childStyle}
 

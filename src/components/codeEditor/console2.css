@@ -1,0 +1,13 @@
+.output-section{
+
+    overflow-x: hidden;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    border: none;
+    background: none;
+    margin-bottom: 0;
+    padding-bottom: 5px;
+    font-size: 11px;
+    padding-right: 30px;
+    /* background-color: blue; */
+}

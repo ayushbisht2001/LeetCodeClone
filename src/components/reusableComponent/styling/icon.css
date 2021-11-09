@@ -9,5 +9,21 @@
 	width: 8px;
     margin : auto 5px;
 }
+.custom-chevron-box{
+	height: 25px;
+	width: 27px;
+	border-radius: 100px  0px 0px 100px ;
+	background-color: white;
+	z-index: 5;
+	border: #dddddd 1px solid;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	padding-left: 6px;
+	text-align: left;
 
+
+
+	
+}
  
