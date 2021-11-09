@@ -64,7 +64,7 @@ export default function CodeSection(props) {
   setTimeout(() => {
     setProblem(problem_list[index])
 
-  }, 3000)
+  }, 1000)
 
   }
 
