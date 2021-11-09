@@ -11,3 +11,15 @@
     padding-right: 30px;
     /* background-color: blue; */
 }
+
+.input-textarea{
+    width: 100%;
+    resize: none;
+    height: 100%;
+    border: none ;
+    outline: none;
+    border-top: 1px solid #dddddd;
+    background-color: transparent;
+    overflow: auto;
+
+}

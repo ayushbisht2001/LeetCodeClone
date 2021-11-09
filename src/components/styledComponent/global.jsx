@@ -333,9 +333,13 @@ export const Button = styled.button`
   font-size : ${(props) => props.size || "18px"};
   touch-action: manipulation;
   cursor : pointer;
+  top : ${props => props.top || ""};
+  bottom : ${props => props.bottom || ""};
+  right : ${props => props.right || ""};
+  left : ${props => props.left || ""};
+  
   ${ (props) => props.childStyle}
 
- 
   ${props => props.shadow1 && `
     &:hover
     {
@@ -364,6 +368,9 @@ export const Button = styled.button`
   @media (max-width: 300px) {   
     ${(props) => props.xs || "none"};
   }
+
+  ${props => props.customStyle}
+
 `;
 
 

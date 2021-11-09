@@ -1,19 +1,22 @@
 import React, {useState, useEffect} from 'react';
-import { Box, Text, Col, Row } from '../styledComponent/global';
+import { Box, Text, Col, Row, Button } from '../styledComponent/global';
 import './console2.css'
 
 const Result = (props) => {
     return(
-        <Box width = "100%" padding = "5px 10px"
-            childStyle = {`
+        <Box 
+        width = "100%" 
+        padding = "5px 10px"
+        childStyle = {`
                 & p{
                     text-align : left;
                     display : block;
+                    font-size : 11px;
                 }
             `}
         >
-            <Text width = "100%" color = "#5cb85c" size = "parent" > Finished in 4 ms </Text>
-            <Text width = "100%" size = "parent" >{`1->2->3`}</Text>
+            <Text  color = "#5cb85c"  >Finished in 4 ms </Text>
+            <Text   >{`1->2->3`}</Text>
         </Box>
     )
 }
@@ -43,6 +46,10 @@ const Output = (props) => {
                     ])
                 }, 2000 )
             }
+            else
+        if(status === "erase"){
+            setOutput([])
+        }
 
     }, [status] )
 
@@ -63,23 +70,36 @@ const Output = (props) => {
     )
 }
 
+const Input = () => {
+
+    return (
+        <Box 
+            width = "100%"
+            height = "100%"
+        >
+            <textarea  className = "input-textarea"  ></textarea>
+        </Box>
+    )
+}
 
 const Console2 = (props) => {
 
-    const{
+    const {
         id,
         data,
         runStatus,
-        setRunStatus
-        
-    } = props;
-    
+        setRunStatus        
+        }  =  props;
+
+    const [inputToggle, setInputToggle] = useState(false)
 
     return (
+
        <Row 
         width = "100%"
         background = "transparent"
         cols = "100%"
+        rows = {`auto ${inputToggle ? "30%" : "0px"}`}
         >
         <Col
             overflow = "auto"
@@ -90,8 +110,68 @@ const Console2 = (props) => {
                 <Output data = {data} status = {runStatus} setStatus = {setRunStatus} />
             </pre>
         </Col>
-           <Col>
+           <Col
+            width = "100%"
+            height = "100%"
+            overflow = "hidden"
+           >
+            <Input />
            </Col>
+           <Button
+            background = "white"
+            color = "black"
+            textAlign = "center"
+            position = "absolute"
+            top = "5px"
+            right = "4px"
+            padding = "0px"
+            radius = "5px"
+            size = "11px"
+            minWidth = "auto"
+            minHeight = "auto"
+            width = "25px"
+            border = "0.5px solid #e6e6e6"
+            height = "27px"
+            
+            customStyle = {`
+                &:hover{
+                    background : #e6e6e6;
+                    border : 1px solid #ccc;
+
+                }
+
+            `}
+            onClick = { () => setRunStatus("erase")}
+
+
+           >
+              <i class="fa fa-eraser" aria-hidden="true"></i>
+            </Button >
+           <Button 
+            background = "white"
+            color = "black"
+            textAlign = "center"
+            position = "absolute"
+            bottom = "5px"
+            right = "4px"
+            padding = "0px"
+            radius = "5px"
+            size = "11px"
+            minWidth = "auto"
+            minHeight = "auto"
+            customStyle = {`
+                &:hover{
+                    border : 1px solid #ccc;
+                    background : #e6e6e6;
+                }
+
+            `}
+            onClick = { () => setInputToggle(!inputToggle)}
+
+
+           >
+               stdin
+            </Button >
        </Row>
     );
 }

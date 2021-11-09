@@ -17,6 +17,7 @@ import { Box } from "../components/styledComponent/global";
 import { Link } from "../components/styledComponent/global";
 import Footer from "../components/home/footer";
 import CodeSection from "../components/home/codeSection";
+import { Spinner } from "../components/reusableComponent/icon";
 
 export default function Home() {
 
@@ -255,7 +256,6 @@ export default function Home() {
                 display = "inline-flex"
                 justify = "left"
                 width = "auto"
-                height = "100%"
                 align = "center"
                 color = "#0088cc"
                 weight = "450"
@@ -332,7 +332,6 @@ export default function Home() {
                 display = "inline-flex"
                 justify = "left"
                 width = "auto"
-                height = "100%"
                 align = "center"
                 color = "#0088cc"
                 weight = "450"
@@ -406,7 +405,7 @@ export default function Home() {
         <Row>
           <CodeSection />
         </Row>
-
+        
       
       </Container>
       

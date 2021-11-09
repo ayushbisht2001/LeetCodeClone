@@ -19,6 +19,7 @@ import { useSelector } from "react-redux";
 import { RightChevronIcon } from "../reusableComponent/icon";
 import Console2 from "../codeEditor/console2.jsx";
 import { CustomChevronIcon } from "../reusableComponent/icon";
+import SecLoader from "../reusableComponent/secondaryLoader";
 
 export default function CodeSection(props) {
 
@@ -59,7 +60,11 @@ export default function CodeSection(props) {
   catch(err){ 
     console.log("invalid value", err)
   } 
-  setProblem(problem_list[index])
+  setProblem([])
+  setTimeout(() => {
+    setProblem(problem_list[index])
+
+  }, 3000)
 
   }
 
@@ -73,12 +78,20 @@ export default function CodeSection(props) {
       margin="30px 10px"
       justify = "center"
     >
-      <Col
+
+        <Col
         border="1px  solid #dddddd"
         radius="5px"
         height="auto"
+        
         shadow={`0 4px 6px rgb(50 50 93 / 11%), 0 1px 3px rgb(0 0 0 / 8%)`}
+        background = "white"            
       >
+         {
+          problem.length=== 0 ? 
+          <SecLoader data = {problem} />
+          :
+          <>
         <Box
           width="100%"
           background="#ecf0f1"
@@ -214,12 +227,13 @@ export default function CodeSection(props) {
             
 
         </Container>
+        </>
+        }
         
       </Col>
 
       <Col 
       >
-        {" "}
         <List
 
           padding = "0px 5px"
@@ -299,6 +313,9 @@ export default function CodeSection(props) {
             </ListItem>         
         </List>
       </Col>
+
+
+      
     </Row>
   );
 }
