@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/LeetCodeClone/static/css/main.bce0e633.chunk.css",
+    "main.css": "/LeetCodeClone/static/css/main.d1385ecf.chunk.css",
     "main.js": "/LeetCodeClone/static/js/main.fae83aff.chunk.js",
     "main.js.map": "/LeetCodeClone/static/js/main.fae83aff.chunk.js.map",
     "runtime-main.js": "/LeetCodeClone/static/js/runtime-main.809c2d2c.js",
@@ -12,7 +12,7 @@
     "static/js/3.b9825ba0.chunk.js.map": "/LeetCodeClone/static/js/3.b9825ba0.chunk.js.map",
     "index.html": "/LeetCodeClone/index.html",
     "static/css/2.0895ebff.chunk.css.map": "/LeetCodeClone/static/css/2.0895ebff.chunk.css.map",
-    "static/css/main.bce0e633.chunk.css.map": "/LeetCodeClone/static/css/main.bce0e633.chunk.css.map",
+    "static/css/main.d1385ecf.chunk.css.map": "/LeetCodeClone/static/css/main.d1385ecf.chunk.css.map",
     "static/js/2.d045bb22.chunk.js.LICENSE.txt": "/LeetCodeClone/static/js/2.d045bb22.chunk.js.LICENSE.txt",
     "static/media/LeetCode_Playground.6edd3f75.png": "/LeetCodeClone/static/media/LeetCode_Playground.6edd3f75.png",
     "static/media/index.css": "/LeetCodeClone/static/media/Typo_Round_Thin_Demo.9e84efef.otf",
@@ -35,7 +35,7 @@
     "static/js/runtime-main.809c2d2c.js",
     "static/css/2.0895ebff.chunk.css",
     "static/js/2.d045bb22.chunk.js",
-    "static/css/main.bce0e633.chunk.css",
+    "static/css/main.d1385ecf.chunk.css",
     "static/js/main.fae83aff.chunk.js"
   ]
 }
