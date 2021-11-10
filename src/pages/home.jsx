@@ -87,6 +87,7 @@ export default function Home() {
                 weight="50"
                 size="15px"
                 opacity="0.3"
+            
               >
                 LeetCode is the best platform to help you enhance your skills,
                 expand your knowledge and prepare for technical interviews.
@@ -95,13 +96,21 @@ export default function Home() {
                 margin="20px auto"
                 background="#1da09c"
                 color="white"
-                padding="5px 12px"
+                padding="3px 12px"
                 display="flex"
                 textAlign="center"
                 align="center"
                 size="15px"
                 opacity="0.3"
+                weight = "normal"
+                transition = "1s all"
                 shadow1
+                customStyle = {`
+                &:hover{
+                  background : #17807d;
+                  border-color : #17807d;
+                }
+                `}
               >
                 Create Account
                 <RightChevronIcon />
