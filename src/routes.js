@@ -8,7 +8,7 @@ const Routes = () => {
     return (
       <Router history={history} basename={process.env.PUBLIC_URL} >
         <Switch>
-          <Route exact path="/" component={Home} />
+          <Route  path="/" component={Home} />
         
         </Switch>
       </Router>
