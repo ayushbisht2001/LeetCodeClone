@@ -118,7 +118,7 @@ export default function Footer() {
                   Made with <HeartIcon size = {8} style = {{margin : "auto 5px"}} /> in IN
                 </Heading>
                 <Text
-                  opacity="0.45"
+                  opacity="0.3"
                   weight="500"
                   size="14.5px"
                   letterSpacing="0.03em"
@@ -166,9 +166,9 @@ export default function Footer() {
           margin="15px auto 80px auto"
         >
           <Text
-            opacity="0.45"
+            opacity="0.3"
             weight="500"
-            size="15px"
+            size="14.8px"
             letterSpacing="0.03em"
             margin="auto"
             textAlign="center"
