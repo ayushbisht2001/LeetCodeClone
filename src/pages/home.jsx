@@ -80,13 +80,13 @@ export default function Home() {
               </Heading>
               <Text
                 color="white"
-                opacity="0.25"
+                opacity="0.35"
                 textAlign="center"
                 display="block"
                 margin="40px auto auto auto"
                 weight="50"
                 size="15px"
-                opacity="0.25"
+                opacity="0.35"
               >
                 LeetCode is the best platform to help you enhance your skills,
                 expand your knowledge and prepare for technical interviews.
@@ -100,7 +100,7 @@ export default function Home() {
                 textAlign="center"
                 align="center"
                 size="15px"
-                opacity="0.25"
+                opacity="0.35"
                 shadow1
               >
                 Create Account
@@ -131,7 +131,7 @@ export default function Home() {
                     display="block"
                     textAlign="right"
                     weight="540"
-                    opacity="0.25"
+                    opacity="0.35"
                   >
 
                   Start Exploring
@@ -145,7 +145,7 @@ export default function Home() {
               </Row>
               <Text
                 color="black"
-                opacity="0.25"
+                opacity="0.35"
                 textAlign="right"
                 display="block"
                 margin="40px auto auto auto"
@@ -165,7 +165,7 @@ export default function Home() {
                 weight = "450"
                 size = "15px"
                 float = "right"
-                // opacity="0.25"
+                // opacity="0.35"
 
                 >
                Get Started
@@ -240,7 +240,7 @@ export default function Home() {
                 Questions, Community & Contests
               </Heading>
               <Text
-              opacity="0.25"
+              opacity="0.35"
               weight = "500"
               size = "15px"
               letterSpacing = "0.03em"
@@ -260,7 +260,7 @@ export default function Home() {
                 color = "#0088cc"
                 weight = "450"
                 size = "15px"
-                // opacity="0.25"
+                // opacity="0.35"
                 >
               View Questions
               <RightChevronIcon />  
@@ -316,7 +316,7 @@ export default function Home() {
                 Companies & Candidates
               </Heading>
               <Text
-              opacity="0.25"
+              opacity="0.35"
               weight = "500"
               size = "15px"
               letterSpacing = "0.03em"
@@ -385,7 +385,7 @@ export default function Home() {
               Developer
               </Heading>
               <Text
-                opacity="0.25"
+                opacity="0.35"
                 weight = "500"
                 size = "15px"
                 letterSpacing = "0.03em"

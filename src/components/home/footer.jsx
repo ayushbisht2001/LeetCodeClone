@@ -14,7 +14,7 @@ import AmazonLogo from "../../assets/images/logo/amazon.svg";
 import AppleLogo from "../../assets/images/logo/apple.svg";
 import BoaLogo from "../../assets/images/logo/bank-of-america.svg";
 import CiscoLogo from "../../assets/images/logo/cisco.svg";
-import FacebookLogo from "../../assets/images/logo/facebook.svg";
+import MetaLogo from "../../assets/images/logo/meta.png";
 import IntelLogo from "../../assets/images/logo/intel.svg";
 import JetLogo from "../../assets/images/logo/jet.svg";
 import PinterestLogo from "../../assets/images/logo/pinterest.svg";
@@ -23,7 +23,6 @@ import StripeLogo from "../../assets/images/logo/stripe.svg";
 import UberLogo from "../../assets/images/logo/uber.svg";
 import LeapMotionLogo from "../../assets/images/logo/leap-motion.svg";
 import India from "../../assets/images/logo/india.svg";
-
 import { RightChevronIcon } from "../reusableComponent/icon";
 import "../../styles/home/footer.css";
 import { HeartIcon } from "../reusableComponent/icon";
@@ -31,8 +30,8 @@ import BridgeIcon from "../../assets/images/logo/bridge.png";
 
 const logos = [
   {
-    title: "facebook",
-    src: FacebookLogo,
+    title: "meta",
+    src: MetaLogo,
   },
   {
     title: "leap-motion",
@@ -119,7 +118,7 @@ export default function Footer() {
                   Made with <HeartIcon size = {8} style = {{margin : "auto 5px"}} /> in IN
                 </Heading>
                 <Text
-                  opacity="0.25"
+                  opacity="0.45"
                   weight="500"
                   size="14.5px"
                   letterSpacing="0.03em"
@@ -164,17 +163,17 @@ export default function Footer() {
           justify="center"
           align="center"
           width="100%"
-          margin="80px auto"
+          margin="15px auto 80px auto"
         >
           <Text
-            opacity="0.25"
+            opacity="0.45"
             weight="500"
             size="15px"
             letterSpacing="0.03em"
             margin="auto"
             textAlign="center"
             borderTop="1px solid #dddddd"
-            padding="70px 20px 0px 20px"
+            padding="80px 20px 0px 20px"
             maxWidth="600px"
           >
             If you are passionate about tackling some of the most interesting

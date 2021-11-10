@@ -277,7 +277,7 @@ export default function CodeSection(props) {
 
         >
           <Box
-            width = "80%"
+            width = "85%"
             height = "42px"
             position = "absolute"
             background = "white"

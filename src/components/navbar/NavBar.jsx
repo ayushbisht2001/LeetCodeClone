@@ -23,26 +23,27 @@ export default function NavBar() {
             <div className="nav-items-list">
               <a className="item">
                 <span className = "item-text">Premium</span>
-            </a>                        
+              </a>                        
               <a className = "item" >
                 <span className = "item-text">
                     Explore
-                    </span>
-
-                  </a>        
+                </span>
+              </a>        
               <a className = "item" >
-                <span className = "item-text">Product</span>
-
-
-                  </a>
+                <span className = "item-text">
+                  Product
+                </span>
+              </a>
               <a className = "item" >
-              <span className = "item-text">Developer</span>
-
-                  </a>
+                <span className = "item-text">
+                  Developer
+                </span>
+              </a>
              <a className = "item last-item" >
-             <span className = "item-text">Sign in</span>
-
-                 </a>
+                <span className = "item-text">
+                  Sign in
+                </span>
+              </a>
           
           </div>
 

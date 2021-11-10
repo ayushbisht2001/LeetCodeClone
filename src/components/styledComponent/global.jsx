@@ -414,7 +414,8 @@ export const Link = styled.a`
     box-shadow: 0 15px 25px 10px rgb(0 0 0 / 8%);
     transition: box-shadow .4s;
     transition: box-shadow .4s,-webkit-box-shadow .4s;
-    }`
+    }
+    `
   }
 
   ${props => props.primary && `
