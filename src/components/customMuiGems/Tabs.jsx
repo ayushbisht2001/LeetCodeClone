@@ -89,7 +89,8 @@ const {
     setOptions,
     rightComponents = null,
     customTabsStyle,
-    customTabStyle    
+    customTabStyle,
+    classes    
 }  = props;
 
 const [value, setValue] = React.useState(0);
@@ -111,7 +112,9 @@ useEffect(() => {
   };
 
   return (
-    <CustomTabs value={value} onChange={handleChange} aria-label="ant example" sx = { { ...customTabsStyle}  } >
+    <CustomTabs value={value} onChange={handleChange} aria-label="ant example" sx = { { ...customTabsStyle}  } 
+      className = {classes}
+    >
         { ( options && options.length > 0 )&& options.map(( data, index  ) => {
             return (
                 <CustomTab 
