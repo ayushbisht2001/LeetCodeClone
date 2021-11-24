@@ -228,6 +228,8 @@ max-width : ${(props)=> props.maxWidth || ""};
 min-height : ${(props) => props.minHeight || ""};
 max-height : ${(props) => props.maxHeight || ""};
 
+${props => css`${props.sx}`}
+
 `
 
 export const Heading = styled.h1`

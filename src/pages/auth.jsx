@@ -10,9 +10,7 @@ const Auth = (props) => {
         type
     } = props;
     return (
-        <Container
-
-        >
+        <Container >
             <DashNavBar />
             <Section>
                 {

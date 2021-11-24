@@ -16,10 +16,10 @@ const CustomTabs = styled(Tabs)({
   
   '& .MuiTabs-indicator': {
     backgroundColor: '#1890ff',
-  },
-  '& .MuiTabs-indicator' : {
     top : "0px ",
+
   },
+
 });
 
 const CustomTab = styled((props) => <Tab disableRipple {...props} />)(({ theme }) => ({
@@ -93,6 +93,8 @@ const {
     classes    
 }  = props;
 
+console.log(props)
+
 const [value, setValue] = React.useState(0);
 
 useEffect(() => {
@@ -112,15 +114,18 @@ useEffect(() => {
   };
 
   return (
-    <CustomTabs value={value} onChange={handleChange} aria-label="ant example" sx = { { ...customTabsStyle}  } 
-      className = {classes}
+    <CustomTabs {...props.tabs} value={value} onChange={handleChange} aria-label="ant example" sx = { { ...customTabsStyle}  } 
+      
     >
         { ( options && options.length > 0 )&& options.map(( data, index  ) => {
             return (
                 <CustomTab 
+                {...props.tab}
                   key = {`customtabs${index}`} 
                   label = {optionsKeyMapper ? data[optionsKeyMapper["label"] ] : data.label  }  
-                  sx = { { ...customTabStyle}}                 
+                  sx = { { ...customTabStyle}} 
+                  
+
                 />
             )
         } ) }
