@@ -2,9 +2,11 @@ import React, {useEffect} from 'react';
 import { styled } from '@mui/material/styles';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
+import { Text } from '../styledComponent/global';
 
 
 const CustomTabs = styled(Tabs)({
+
   // borderBottom: '1px solid #e8e8e8',
   minHeight : "36px",
   height : "36px",
@@ -17,7 +19,6 @@ const CustomTabs = styled(Tabs)({
   '& .MuiTabs-indicator': {
     backgroundColor: '#1890ff',
     top : "0px ",
-
   },
 
 });
@@ -34,6 +35,7 @@ const CustomTab = styled((props) => <Tab disableRipple {...props} />)(({ theme }
   fontWeight: theme.typography.fontWeightRegular,
   color: 'rgba(0, 0, 0, 0.85)',
   border : '1px solid #dddddd',
+
   fontFamily: [
     '-apple-system',
     'BlinkMacSystemFont',
@@ -65,12 +67,9 @@ const CustomTab = styled((props) => <Tab disableRipple {...props} />)(({ theme }
 
   },
   '&.MuiTabs-flexContainer ' : {
-
     height : "40px",
     minHeight : "100%",
     width : "100%"
-
-
   },
   '&.Mui-focusVisible': {
     backgroundColor: '#d1eaff',
@@ -93,7 +92,7 @@ const {
     classes    
 }  = props;
 
-console.log(props)
+console.log("props", props)
 
 const [value, setValue] = React.useState(0);
 
@@ -114,8 +113,10 @@ useEffect(() => {
   };
 
   return (
-    <CustomTabs {...props.tabs} value={value} onChange={handleChange} aria-label="ant example" sx = { { ...customTabsStyle}  } 
-      
+    <CustomTabs
+     {...props.tabs} 
+     value={value} onChange={handleChange} aria-label="ant example" 
+    {...customTabsStyle}
     >
         { ( options && options.length > 0 )&& options.map(( data, index  ) => {
             return (
@@ -123,7 +124,8 @@ useEffect(() => {
                 {...props.tab}
                   key = {`customtabs${index}`} 
                   label = {optionsKeyMapper ? data[optionsKeyMapper["label"] ] : data.label  }  
-                  sx = { { ...customTabStyle}} 
+                  {...customTabStyle}
+
                   
 
                 />
@@ -131,6 +133,7 @@ useEffect(() => {
         } ) }
        
         { rightComponents }
+      
         
     </CustomTabs>
   );

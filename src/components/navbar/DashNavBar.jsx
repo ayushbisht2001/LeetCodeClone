@@ -9,14 +9,16 @@ import NavTabs from './NavTabs';
 const DashNavBar = () => {
 
     
-    const theme = useMemo(() => createTheme(Theme("dark") ), [])
+    const theme = useMemo(() => createTheme(Theme("light") ), [])
     return (
         <Container
             width = "100%"
-            padding = "10px 20px"
-            height = "auto"
-            minHeight = "40px"
-            maxWidth = "1100px"
+            padding = "4px 20px"
+            height = "44px"
+            minHeight = "30px"
+            justify = "center"
+            align = "center"
+            display = "flex"
         >
             <ThemeProvider theme={theme}>
                 <NavTabs />

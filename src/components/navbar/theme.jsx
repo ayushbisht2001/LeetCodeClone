@@ -6,27 +6,29 @@ const Theme = (mode) => {
         
     return(
             mode === "light" ?  
-          { pallete : {                           
+          { palette : {                           
                         background : {
-                            main : "black",
-                            default : "red"
+                            main : "white",
+                            default : "red",
+                            tab : "white"
+
                         },
                         text : {
-                            primary : "red",
-                            secondary : "blue",
+                            primary : "black",
+                            secondary : "black",
                         }
             }}
             :
             {
-                pallete : {                           
+                palette : {                           
                     background : {
-                        main : "red",
+                        main : "#282a2e",
                         default : "red",
-                        tab : "rgb(40,42,46)"
+                        tab : "#282a2e"
                     },
                     text : {
-                        primary : "red",
-                        secondary : "blue",
+                        p : "rgba(239,241,246,.75)",
+                        s : "white",
                     },
                     shadow : {
 
