@@ -15,7 +15,7 @@ import { Hexa } from "../components/cssArts/hexa";
 import { ExploreCard } from "../components/cssArts/exploreCard";
 import { Box } from "../components/styledComponent/global";
 import { Link } from "../components/styledComponent/global";
-import Footer from "../components/home/footer";
+import Footer from "../components/footer/footer";
 import CodeSection from "../components/home/codeSection";
 import { Spinner } from "../components/reusableComponent/icon";
 

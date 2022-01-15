@@ -102,5 +102,18 @@ export const Spinner = (props) => {
     )
 }
 
+
+export const PlayGround = (props) => {
+
+    const {
+        color = "#90a4ae",
+        sx
+    } = props;
+    return (
+        <svg viewBox="0 0 24 24" style = {{ ...sx}} width="1em" height="1em" class="icon__1Md2 new-playground-icon__k2eV nav-icon__T80b" data-selected="true" data-label-id="0" data-allytip="true">
+            <path fill = {color}   fill-rule="evenodd" d="M21 5H3v14h9v2H1V3h22v7h-2V5zm-3 11v-3h2v3h3v2h-3v3h-2v-3h-3v-2h3zM6 8l7 4.001L6 16v-2.303l2.969-1.696L6 10.303V8z"></path></svg>
+    )
+}
+
     
 

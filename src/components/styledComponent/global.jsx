@@ -10,6 +10,11 @@ import styled , {css} from "styled-components";
 export const Container = styled.div`
   width: ${(props) => props.width || "100%"};
   height: ${(props) => props.height || "100%"};
+  display: ${(props) => props.display || ""};
+  align-items: ${(props) => props.align || ""};
+  justify-content: ${(props) => props.justify || ""};
+  flex-direction : ${(props) => props.direction || "column"};
+  flex-wrap : ${(props) => props.wrap || "wrap"};
   background: ${(props) => props.background || "none"};
   color: ${(props) => props.color || "black"};   
   margin : ${(props) => props.margin || "auto"};
@@ -29,6 +34,9 @@ export const Container = styled.div`
   class : ${props => props.className || ""};
   border : ${props => props.border || ""};
   opacity : ${props => props.opacity || ""};
+  style : ${ props => ({...props})};
+
+  ${props => css`${props.sx}`}
 
   @media (max-width: 1400px) {   
     ${(props) => props.xl || "none"};
@@ -138,7 +146,7 @@ export const Col = styled.div`
   box-shadow : ${props => props.shadow || ""};
   transition : ${props => props.transition || "0.4s all"};
   overflow : ${props => props.overflow || "visible"};
-
+  style : ${ props => ({...props})};
   ${ (props) => props.childStyle}
 
   @media (max-width: 1400px) {   
@@ -183,7 +191,9 @@ export const Section = styled.section`
   left : ${props => props.left || ""};
   position : ${props => props.position || "" };
   class : ${props => props.className || ""};
+  style : ${ props => ({...props})};
   ${ (props) => props.childStyle}
+
 
 `;
 
@@ -227,6 +237,10 @@ min-width : ${(props) => props.minWidth || ""};
 max-width : ${(props)=> props.maxWidth || ""};
 min-height : ${(props) => props.minHeight || ""};
 max-height : ${(props) => props.maxHeight || ""};
+
+${props => css`${props.sx}`}
+
+& 
 
 `
 
@@ -337,7 +351,8 @@ export const Button = styled.button`
   bottom : ${props => props.bottom || ""};
   right : ${props => props.right || ""};
   left : ${props => props.left || ""};
-  
+  style : ${props => ({...props})};
+
   ${ (props) => props.childStyle}
 
   ${props => props.shadow1 && `
@@ -367,9 +382,10 @@ export const Button = styled.button`
 
   @media (max-width: 300px) {   
     ${(props) => props.xs || "none"};
-  }
+  };
 
   ${props => props.customStyle}
+  
 
 `;
 
@@ -456,7 +472,7 @@ export const Link = styled.a`
 export const Box = styled.div`
   width: ${(props) => props.width || "auto"};
   height: ${(props) => props.height || "auto"};
-  background: ${(props) => props.background || "none"};
+  background: ${(props) => props.background || ""};
   color: ${(props) => props.color || "black"};
   display: ${(props) => props.display || "block"};
   align-items: ${(props) => props.align || ""};
@@ -487,6 +503,7 @@ export const Box = styled.div`
   box-shadow : ${props => props.shadow || ""};
   transition : ${props=> props.transition || "0.5s all"};
   z-index : ${props => props.zIndex || "0"};
+  style : ${(props) => ({...props}) };
 
   ${ (props) => props.childStyle}
 
@@ -509,6 +526,10 @@ export const Box = styled.div`
   @media (max-width: 300px) {   
     ${(props) => props.xs || "none"};
   }
+
+  ${props => props.customStyle}
+
+
 `;
 
 
