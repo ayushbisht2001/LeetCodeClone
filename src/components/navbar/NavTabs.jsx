@@ -26,7 +26,7 @@ const navLeftItems = [
   {
     label: (
       <Text
-        size="12px"
+        size="14px"
         color="#546e7a"
         sx={`
                 &:hover{
@@ -42,7 +42,7 @@ const navLeftItems = [
   {
     label: (
       <Text
-        size="12px"
+        size="14px"
         color="#546e7a"
         sx={`
             &:hover{
@@ -58,7 +58,7 @@ const navLeftItems = [
   {
     label: (
       <Text
-        size="12px"
+        size="14px"
         color="#546e7a"
         sx={`
             &:hover{
@@ -74,7 +74,7 @@ const navLeftItems = [
   {
     label: (
       <Text
-        size="12px"
+        size="14px"
         color="#546e7a"
         sx={`
             &:hover{
@@ -90,7 +90,7 @@ const navLeftItems = [
   {
     label: (
       <Text
-        size="12px"
+        size="14px"
         color="#546e7a"
         sx={`
             &:hover{
@@ -106,7 +106,7 @@ const navLeftItems = [
   {
     label: (
       <Text
-        size="12px"
+        size="14px"
         color="#546e7a"
         sx={`
             &:hover{

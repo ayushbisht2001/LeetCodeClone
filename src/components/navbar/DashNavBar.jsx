@@ -1,4 +1,4 @@
-import React, {useMemo} from 'react';
+import React, {useMemo, useState} from 'react';
 import { createTheme, ThemeProvider, useTheme } from '@mui/material/styles';
 import { Container } from '../styledComponent/global';
 
@@ -8,17 +8,18 @@ import NavTabs from './NavTabs';
 
 const DashNavBar = () => {
 
-    
-    const theme = useMemo(() => createTheme(Theme("light") ), [])
+    const [state, setstate] = useState("light");
+    const theme = useMemo(() => createTheme(Theme(state) ), [])
     return (
         <Container
             width = "100%"
-            padding = "4px 20px"
-            height = "44px"
+            padding = "5px 20px"
+            height = "48px"
             minHeight = "30px"
             justify = "center"
             align = "center"
             display = "flex"
+            background = { state=="light" ? "white" : "#282a2e"}
         >
             <ThemeProvider theme={theme}>
                 <NavTabs />
