@@ -15,7 +15,7 @@ import { Hexa } from "../components/cssArts/hexa";
 import { ExploreCard } from "../components/cssArts/exploreCard";
 import { Box } from "../components/styledComponent/global";
 import { Link } from "../components/styledComponent/global";
-import Footer from "../components/home/footer";
+import Footer from "../components/footer/footer";
 import CodeSection from "../components/home/codeSection";
 import { Spinner } from "../components/reusableComponent/icon";
 
@@ -86,7 +86,6 @@ export default function Home() {
                 margin="40px auto auto auto"
                 weight="50"
                 size="15px"
-                opacity="0.3"
             
               >
                 LeetCode is the best platform to help you enhance your skills,
@@ -101,7 +100,7 @@ export default function Home() {
                 textAlign="center"
                 align="center"
                 size="15px"
-                opacity="0.3"
+                opacity="0.7"
                 weight = "normal"
                 transition = "1s all"
                 shadow1
