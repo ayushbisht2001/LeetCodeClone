@@ -7,7 +7,7 @@ const Routes = () => {
 
 
     return (
-      <Router history={history} basename={process.env.PUBLIC_URL} >
+      <Router history={history}  >
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/login" render={ (props) =>  <Auth type = {props.location.state ? props.location.state.type : "login" } {...props} />} />
